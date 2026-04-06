@@ -1,0 +1,291 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww12720\viewh7800\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 export interface MaturityOption \{\
+  label: string;\
+  value: number;\
+  description: string;\
+\}\
+\
+export interface AuditQuestion \{\
+  id: string;\
+  pillar: string;\
+  pillarLetter: string;\
+  pillarDescription: string;\
+  question: string;\
+  type: "maturity";\
+  options: MaturityOption[];\
+  tooltip?: string;\
+\}\
+\
+export const MATURITY_OPTIONS: MaturityOption[] = [\
+  \{ label: "Not Yet", value: 1, description: "We haven't started here" \},\
+  \{ label: "In Progress", value: 2, description: "We're working on it" \},\
+  \{ label: "Embedded", value: 3, description: "This is how we operate" \},\
+];\
+\
+export const auditQuestions: AuditQuestion[] = [\
+  // VISIBILITY\
+  \{\
+    id: "v1",\
+    pillar: "Visibility",\
+    pillarLetter: "V",\
+    pillarDescription: "Can your company actually see what your AI is doing?",\
+    question: "We can explain how our AI tools make decisions to any stakeholder who asks.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "v2",\
+    pillar: "Visibility",\
+    pillarLetter: "V",\
+    pillarDescription: "Can your company actually see what your AI is doing?",\
+    question: "We have a complete inventory of all AI tools in use \'97 including tools adopted by individual team members without formal approval.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+    tooltip: "Shadow AI refers to AI tools adopted by individual team members without formal company approval. More common than most leaders realize.",\
+  \},\
+  \{\
+    id: "v3",\
+    pillar: "Visibility",\
+    pillarLetter: "V",\
+    pillarDescription: "Can your company actually see what your AI is doing?",\
+    question: "We know the origin and provenance of the training data behind every AI tool we use.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "v4",\
+    pillar: "Visibility",\
+    pillarLetter: "V",\
+    pillarDescription: "Can your company actually see what your AI is doing?",\
+    question: "If a user requested that their data be deleted from our AI systems, we could honor that request.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  // OWNERSHIP\
+  \{\
+    id: "o1",\
+    pillar: "Ownership",\
+    pillarLetter: "O",\
+    pillarDescription: "Who is actually accountable, and are they empowered to act?",\
+    question: "There is a named person in our organization with formal responsibility AND real authority over AI ethics outcomes.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "o2",\
+    pillar: "Ownership",\
+    pillarLetter: "O",\
+    pillarDescription: "Who is actually accountable, and are they empowered to act?",\
+    question: "That person has the authority to halt an AI deployment if it fails a bias or safety review.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "o3",\
+    pillar: "Ownership",\
+    pillarLetter: "O",\
+    pillarDescription: "Who is actually accountable, and are they empowered to act?",\
+    question: "Leadership performance metrics are tied to ethical AI benchmarks, not just output or efficiency.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "o4",\
+    pillar: "Ownership",\
+    pillarLetter: "O",\
+    pillarDescription: "Who is actually accountable, and are they empowered to act?",\
+    question: "Everyone on our team knows who owns incident response if our AI causes harm.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  // INVESTMENT\
+  \{\
+    id: "i1",\
+    pillar: "Investment",\
+    pillarLetter: "I",\
+    pillarDescription: "Are you putting real resources behind your stated values?",\
+    question: "We have a dedicated budget line for bias review, fairness testing, and ethics audits \'97 separate from our core AI development budget.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "i2",\
+    pillar: "Investment",\
+    pillarLetter: "I",\
+    pillarDescription: "Are you putting real resources behind your stated values?",\
+    question: "Our vendor contracts include accountability clauses for biased or privacy-violating outcomes.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "i3",\
+    pillar: "Investment",\
+    pillarLetter: "I",\
+    pillarDescription: "Are you putting real resources behind your stated values?",\
+    question: "We have invested in Red Teaming before deploying AI-powered features or products.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+    tooltip: "Red Teaming is a structured process where experts actively try to break or trick your AI before it reaches users. Think of it as a stress test with intent.",\
+  \},\
+  \{\
+    id: "i4",\
+    pillar: "Investment",\
+    pillarLetter: "I",\
+    pillarDescription: "Are you putting real resources behind your stated values?",\
+    question: "We have a reliable method to detect when our AI produces different outcomes across different user groups.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  // CO-CREATION\
+  \{\
+    id: "c1",\
+    pillar: "Co-Creation",\
+    pillarLetter: "C",\
+    pillarDescription: "Are the people your AI affects actually shaping it?",\
+    question: "Communities affected by our AI were involved in design and testing before we launched.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "c2",\
+    pillar: "Co-Creation",\
+    pillarLetter: "C",\
+    pillarDescription: "Are the people your AI affects actually shaping it?",\
+    question: "We have a documented process for turning community or user feedback into actual product or technical changes.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "c3",\
+    pillar: "Co-Creation",\
+    pillarLetter: "C",\
+    pillarDescription: "Are the people your AI affects actually shaping it?",\
+    question: "We have a clear disclosure policy for when we discover flaws or unexpected outcomes in our AI.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "c4",\
+    pillar: "Co-Creation",\
+    pillarLetter: "C",\
+    pillarDescription: "Are the people your AI affects actually shaping it?",\
+    question: "The key decision-makers shaping our AI had a genuine ability to say no during the design process.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  // EMBED\
+  \{\
+    id: "e1",\
+    pillar: "Embed",\
+    pillarLetter: "E",\
+    pillarDescription: "Is this structural enough to survive a leadership change?",\
+    question: "Our ethical AI commitments exist in written policies that are independent of any one person or champion.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "e2",\
+    pillar: "Embed",\
+    pillarLetter: "E",\
+    pillarDescription: "Is this structural enough to survive a leadership change?",\
+    question: "There is a required ethics review checkpoint in our process for building, buying, or deploying AI.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "e3",\
+    pillar: "Embed",\
+    pillarLetter: "E",\
+    pillarDescription: "Is this structural enough to survive a leadership change?",\
+    question: "We have a policy for retiring AI systems that no longer meet our ethical or accuracy standards.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+  \{\
+    id: "e4",\
+    pillar: "Embed",\
+    pillarLetter: "E",\
+    pillarDescription: "Is this structural enough to survive a leadership change?",\
+    question: "Our leadership or board has been formally briefed on our AI practices and risks in the last 12 months.",\
+    type: "maturity",\
+    options: MATURITY_OPTIONS,\
+  \},\
+];\
+\
+export const PILLARS = [\
+  \{ letter: "V", name: "Visibility", description: "Can your company actually see what your AI is doing?", questionIds: ["v1","v2","v3","v4"] \},\
+  \{ letter: "O", name: "Ownership", description: "Who is actually accountable, and are they empowered to act?", questionIds: ["o1","o2","o3","o4"] \},\
+  \{ letter: "I", name: "Investment", description: "Are you putting real resources behind your stated values?", questionIds: ["i1","i2","i3","i4"] \},\
+  \{ letter: "C", name: "Co-Creation", description: "Are the people your AI affects actually shaping it?", questionIds: ["c1","c2","c3","c4"] \},\
+  \{ letter: "E", name: "Embed", description: "Is this structural enough to survive a leadership change?", questionIds: ["e1","e2","e3","e4"] \},\
+];\
+\
+export type MaturityBand = "Reactive" | "Developing" | "Progressing" | "Advanced" | "Embedded";\
+\
+export interface PillarScore \{\
+  pillar: string;\
+  pillarLetter: string;\
+  score: number;\
+  maxScore: number;\
+  band: MaturityBand;\
+  color: string;\
+\}\
+\
+export interface AuditResult \{\
+  totalScore: number;\
+  maxScore: number;\
+  pillarScores: PillarScore[];\
+  lowestPillar: PillarScore;\
+  nextStep: string;\
+  overallBand: MaturityBand;\
+\}\
+\
+export function getMaturityBand(score: number): \{ band: MaturityBand; color: string \} \{\
+  if (score <= 5)  return \{ band: "Reactive",    color: "#6B1F2A" \};\
+  if (score <= 7)  return \{ band: "Developing",  color: "#B5651D" \};\
+  if (score <= 9)  return \{ band: "Progressing", color: "#0A0A0A" \};\
+  if (score <= 11) return \{ band: "Advanced",    color: "#C9A96E" \};\
+  return               \{ band: "Embedded",    color: "#C9A96E" \};\
+\}\
+\
+export const NEXT_STEPS: Record<string, string> = \{\
+  Visibility: "Run a Shadow AI audit this quarter. Ask every team lead to list every AI tool their team uses \'97 approved or not. That list is your real starting point.",\
+  Ownership: "Name someone. Not a committee. One person with a real title, a real mandate, and the authority to say no. Until there's a name attached, nothing changes.",\
+  Investment: "Add one line to your next budget cycle: ethical AI review. It doesn't need to be large \'97 it needs to exist. What gets funded gets done.",\
+  "Co-Creation": "Before your next AI feature ships, hold one session with the people it affects most. Not a survey. A conversation where their feedback can actually change the outcome.",\
+  Embed: "Write one policy. One page. What your organization commits to in AI \'97 and what triggers a review or a halt. Get it signed. Get it filed. Then build from there.",\
+\};\
+\
+export function calculateResults(answers: Record<string, number>): AuditResult \{\
+  const pillarScores: PillarScore[] = PILLARS.map((pillar) => \{\
+    const score = pillar.questionIds.reduce((sum, id) => sum + (answers[id] ?? 1), 0);\
+    const \{ band, color \} = getMaturityBand(score);\
+    return \{\
+      pillar: pillar.name,\
+      pillarLetter: pillar.letter,\
+      score,\
+      maxScore: 12,\
+      band,\
+      color,\
+    \};\
+  \});\
+\
+  const lowestPillar = pillarScores.reduce((a, b) => (a.score <= b.score ? a : b));\
+  const totalScore = pillarScores.reduce((sum, p) => sum + p.score, 0);\
+  const \{ band: overallBand \} = getMaturityBand(Math.round(totalScore / 5));\
+\
+  return \{\
+    totalScore,\
+    maxScore: 60,\
+    pillarScores,\
+    lowestPillar,\
+    nextStep: NEXT_STEPS[lowestPillar.pillar],\
+    overallBand,\
+  \};\
+\}}

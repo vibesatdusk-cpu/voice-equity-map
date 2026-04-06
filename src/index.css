@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 36 38% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 33% 96%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 0 0% 4%;
+    --accent: 348 55% 27%;
+    --accent-foreground: 40 33% 98%;
+    --destructive: 348 55% 27%;
+    --destructive-foreground: 40 33% 98%;
+    --border: 36 38% 60%;
+    --input: 40 20% 94%;
+    --ring: 36 38% 60%;
+    --radius: 0.25rem;
+
+    --color-black: #0A0A0A;
+    --color-gold: #C9A96E;
+    --color-cream: #F5F0E8;
+    --color-maroon: #6B1F2A;
+    --color-dark-surface: #FFFFFF;
+    --color-warm-white: #FDFAF5;
+
+    --sidebar-background: 40 33% 98%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 36 38% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 94%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 36 38% 60%;
+    --sidebar-ring: 36 38% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Josefin Sans', 'Gill Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+  }
+  .font-body {
+    font-family: 'Josefin Sans', 'Gill Sans', sans-serif;
+  }
+  .text-gold {
+    color: var(--color-gold);
+  }
+  .text-cream {
+    color: var(--color-cream);
+  }
+  .text-cream-50 {
+    color: rgba(245, 240, 232, 0.5);
+  }
+  .text-cream-30 {
+    color: rgba(245, 240, 232, 0.3);
+  }
+  .text-deep {
+    color: #0A0A0A;
+  }
+  .text-deep-70 {
+    color: rgba(10, 10, 10, 0.7);
+  }
+  .text-deep-65 {
+    color: rgba(10, 10, 10, 0.65);
+  }
+  .text-deep-50 {
+    color: rgba(10, 10, 10, 0.5);
+  }
+  .text-deep-40 {
+    color: rgba(10, 10, 10, 0.4);
+  }
+  .bg-warm-white {
+    background-color: var(--color-warm-white);
+  }
+  .bg-black-brand {
+    background-color: var(--color-black);
+  }
+  .bg-dark-surface {
+    background-color: var(--color-dark-surface);
+  }
+  .bg-maroon {
+    background-color: var(--color-maroon);
+  }
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+  .border-cream {
+    border-color: var(--color-cream);
+  }
+  .border-cream-30 {
+    border-color: rgba(245, 240, 232, 0.3);
+  }
+  .grain-texture {
+    position: relative;
+  }
+  .grain-texture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+  .tracking-brand {
+    letter-spacing: 0.1em;
+  }
+  .tracking-brand-wide {
+    letter-spacing: 0.2em;
+  }
+  .card-light {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(201, 169, 110, 0.4);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+}
