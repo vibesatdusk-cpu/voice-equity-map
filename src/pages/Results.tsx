@@ -4,7 +4,7 @@ import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer,
 } from "recharts";
 import logo from "@/assets/labyrinth-logo.png";
-import PricingModal from "@/components/PricingModal";
+
 import { calculateResults, type AuditResult, type MaturityBand } from "@/data/auditQuestions";
 
 const linkedInUrl = "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fvoicebylabyrinth.com&summary=" +
@@ -53,7 +53,7 @@ const CTA: Record<MaturityBand, { headline: string; sub: string }> = {
 
 const Results = () => {
   const [chartVisible, setChartVisible] = useState(false);
-  const [pricingOpen, setPricingOpen] = useState(false);
+  
 
   useEffect(() => {
     const t = setTimeout(() => setChartVisible(true), 300);
@@ -163,7 +163,7 @@ const Results = () => {
           <p className="font-body text-[#0A0A0A] text-xs tracking-brand opacity-50">Powered by the V.O.I.C.E. Method — labyrinthdigitalglobal.com</p>
         </footer>
       </div>
-      <PricingModal open={pricingOpen} onClose={() => setPricingOpen(false)} />
+      
     </div>
   );
 };
