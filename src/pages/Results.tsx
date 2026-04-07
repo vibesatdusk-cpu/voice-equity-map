@@ -138,9 +138,13 @@ const Results = () => {
             </div>
 
             <div className="space-y-3 pt-2">
-              <button onClick={() => setPricingOpen(true)} className="w-full bg-[#6B1F2A] text-[#F5F0E8] font-body text-sm tracking-brand-wide px-10 py-4 hover:bg-[#6B1F2A]/90 transition-colors rounded font-medium">
-                {cta.headline}
-              </button>
+              href="https://calendly.com/labyrinthdigitalglobal-info"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full bg-[#6B1F2A] text-[#F5F0E8] font-body text-sm tracking-brand-wide px-10 py-4 hover:bg-[#6B1F2A]/90 transition-colors rounded font-medium block text-center"
+>
+  {cta.headline}
+</a>
               <p className="font-body text-[#0A0A0A] text-[12px] tracking-brand text-center opacity-50">{cta.sub}</p>
               <p className="text-center">
                 <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="font-body text-[#C9A96E] text-[13px] tracking-brand hover:underline transition-colors">
