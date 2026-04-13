@@ -4,7 +4,6 @@ import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer,
 } from "recharts";
 import logo from "@/assets/labyrinth-logo.png";
-
 import { calculateResults, type AuditResult, type MaturityBand } from "@/data/auditQuestions";
 
 const linkedInUrl = "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fvoicebylabyrinth.com&summary=" +
@@ -15,7 +14,7 @@ const BAND_COLORS: Record<MaturityBand, string> = {
 };
 
 const BAND_DESCRIPTIONS: Record<MaturityBand, string> = {
-  Reactive: "Your AI practices are mostly informal right now. The gaps are real and fixable — knowing where they are is already the hardest part.",
+  Reactive: "Your AI practices are mostly informal right now. The gaps are real and fixable -- knowing where they are is already the hardest part.",
   Developing: "You are building momentum. The foundation exists. A few intentional moves will change the picture significantly.",
   Progressing: "Solid groundwork is in place. The opportunity now is making it structural so it holds regardless of who is in the room.",
   Advanced: "You are ahead of most organizations at your scale. The work now is locking in what you have built so it survives growth and leadership change.",
@@ -40,7 +39,7 @@ const GAP_COPY: Record<MaturityBand, string> = {
 
 const NEXT_STEP_OVERRIDE: Record<MaturityBand, string> = {
   Reactive: "", Developing: "", Progressing: "", Advanced: "",
-  Embedded: "Publish your AI strategy. Not an internal memo — a public commitment. Name your standards, your review process, and what triggers a halt. That document becomes your market position and Labyrinth can help you build it.",
+  Embedded: "Publish your AI strategy. Not an internal memo -- a public commitment. Name your standards, your review process, and what triggers a halt. That document becomes your market position and Labyrinth can help you build it.",
 };
 
 const CTA: Record<MaturityBand, { headline: string; sub: string }> = {
@@ -53,7 +52,6 @@ const CTA: Record<MaturityBand, { headline: string; sub: string }> = {
 
 const Results = () => {
   const [chartVisible, setChartVisible] = useState(false);
-  
 
   useEffect(() => {
     const t = setTimeout(() => setChartVisible(true), 300);
@@ -116,7 +114,7 @@ const Results = () => {
           <motion.div className="space-y-6" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.7 }}>
             <div className="border-l-[3px] border-[#C9A96E] pl-5">
               <span className="font-body text-[#C9A96E] text-xs tracking-brand-wide uppercase font-medium">
-                {isEmbedded ? "Where You Stand" : "Strength — " + strongestPillar.pillar}
+                {isEmbedded ? "Where You Stand" : "Strength -- " + strongestPillar.pillar}
               </span>
               <p className="font-body text-[#0A0A0A] text-sm mt-2 leading-relaxed">
                 {isEmbedded ? STRENGTH_COPY[result.overallBand] : "Your strongest pillar is " + strongestPillar.pillar + " with a score of " + strongestPillar.score + "/12. " + STRENGTH_COPY[result.overallBand]}
@@ -125,7 +123,7 @@ const Results = () => {
 
             <div className="border-l-[3px] pl-5" style={{ borderColor: isEmbedded ? "#C9A96E" : "#6B1F2A" }}>
               <span className="font-body text-xs tracking-brand-wide uppercase font-medium" style={{ color: isEmbedded ? "#C9A96E" : "#6B1F2A" }}>
-                {isEmbedded ? "What Comes Next" : "Gap — " + result.lowestPillar.pillar}
+                {isEmbedded ? "What Comes Next" : "Gap -- " + result.lowestPillar.pillar}
               </span>
               <p className="font-body text-[#0A0A0A] text-sm mt-2 leading-relaxed">
                 {isEmbedded ? GAP_COPY[result.overallBand] : "Your lowest score is in " + result.lowestPillar.pillar + " at " + result.lowestPillar.score + "/12, rated " + result.lowestPillar.band + ". " + GAP_COPY[result.overallBand]}
@@ -138,13 +136,14 @@ const Results = () => {
             </div>
 
             <div className="space-y-3 pt-2">
-              href="https://calendly.com/labyrinthdigitalglobal-info"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full bg-[#6B1F2A] text-[#F5F0E8] font-body text-sm tracking-brand-wide px-10 py-4 hover:bg-[#6B1F2A]/90 transition-colors rounded font-medium block text-center"
->
-  {cta.headline}
-</a>
+              
+                href="https://calendly.com/labyrinthdigitalglobal-info"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#6B1F2A] text-[#F5F0E8] font-body text-sm tracking-brand-wide px-10 py-4 hover:bg-[#6B1F2A]/90 transition-colors rounded font-medium block text-center"
+              >
+                {cta.headline}
+              </a>
               <p className="font-body text-[#0A0A0A] text-[12px] tracking-brand text-center opacity-50">{cta.sub}</p>
               <p className="text-center">
                 <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="font-body text-[#C9A96E] text-[13px] tracking-brand hover:underline transition-colors">
@@ -160,10 +159,9 @@ const Results = () => {
             <img src={logo} alt="Labyrinth" className="h-6 w-6 object-contain bg-transparent border-none p-0 shadow-none" />
             <span className="font-display text-[#C9A96E] text-sm">V.O.I.C.E.</span>
           </div>
-          <p className="font-body text-[#0A0A0A] text-xs tracking-brand opacity-50">Powered by the V.O.I.C.E. Method — labyrinthdigitalglobal.com</p>
+          <p className="font-body text-[#0A0A0A] text-xs tracking-brand opacity-50">Powered by the V.O.I.C.E. Method -- labyrinthdigitalglobal.com</p>
         </footer>
       </div>
-      
     </div>
   );
 };
